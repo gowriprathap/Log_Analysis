@@ -6,7 +6,7 @@ query1 = "SELECT title, count(*) AS views FROM articles JOIN log ON articles.slu
 query_result1 = dict() #Creating a dict object
 query_result1['title'] = '\nArticles which have been accessed the most\n'
 
-query2 = "SELECT authors.name, count(*) AS views FROM authors JOIN articles ON articles.author = authors.id JOIN log ON articles.slug = substring(log.path,10) GROUP BY authors.name ORDER BY views DESC LIMIT 3;" #Second query
+query2 = "SELECT authors.name, count(*) AS views FROM authors JOIN articles ON articles.author = authors.id JOIN log ON articles.slug = substring(log.path,10) GROUP BY authors.name ORDER BY views DESC;" #Second query
 #Who are the most popular article authors of all time?
 #when you sum up all of the articles each author has written, which authors get the most page views?
 #Presenting this as a sorted list with the most popular author at the top.
