@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 import psycopg2
 
 query1 = "SELECT title, count(*) AS views FROM articles JOIN log ON articles.slug = substring(log.path,10) GROUP BY title ORDER BY views DESC LIMIT 3;" #First query
