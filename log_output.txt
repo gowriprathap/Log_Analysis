@@ -11,6 +11,6 @@ Most popular authors of all time
         Anonymous Contributor - 170098 views
         Markoff Chaney - 84557 views
 
-Days on which more than 1% of requests led to errors
+Days with more than 1% of errors
 
         Jul 17, 2016 - 2.263% errors
