@@ -27,3 +27,32 @@ If these applications are not installed in your computer, you can download and i
  11. In the future to run the database, type `psql -d news`.
  12. Run the commands from the Create views section in the README file here in the terminal (with vagrant running) to run the python program.
  13. Run command `python log.py` to run the python program that displays the query results.
+
+ ##  Create Views
+
+Views were created to answer the third query to help break the question down into portions for readability and understanding.
+
+The first view:
+
+    create view pagestats as
+    select count(*) as numstats,
+    status, cast(time as date) as day1
+    from log where status like '%404%'
+    group by status, day1
+    order by numstats desc limit 3;
+
+The second view:
+
+    create view sumviews as
+    select count(*) as visitors,
+    cast(time as date) as day2
+    from log
+    group by day2;
+
+The last view:
+
+    create view errorsum as
+    select * from pagestats join sumviews
+    ON pagestats.day1 = sumviews.day2;
+
+Type in these commands in your terminal (when vagrant is running) and then run the python program using `python log.py`.
