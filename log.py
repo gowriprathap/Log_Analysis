@@ -29,12 +29,12 @@ def get_query(query): #Function to get query
 def print_query(query_results): #Printing first and second queries
     print (query_results['title'])
     for result in query_results['results']:
-        print ('\t' + str(result[0]) + ' ---- ' + str(result[1]) + ' views') #Printing the first two parts of the result
+        print ('\t' + str(result[0]) + ' - ' + str(result[1]) + ' views') #Printing the first two parts of the result
 
 def print_3rd_query(query_results): #Printing third query
     print (query_results['title'])
     for result in query_results['results']:
-        print ('\t' + str(result[0]) + ' ---- ' + str(result[1]) + '% errors') #Printing as % error
+        print ('\t' + str(result[0]) + ' - ' + str(result[1]) + '% errors') #Printing as % error
 
 query_result1['results'] = get_query(query1) #Getting the query and storing in the dict object
 print_query(query_result1) #Printing the dict object
